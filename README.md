@@ -10,5 +10,9 @@ Most developers skip weekly reviews entirely. DevLog is a minimal, standalone de
 
 Open it, glance at your week, write your review. That's it.
  
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+ 
 ---
  
