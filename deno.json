@@ -1,0 +1,42 @@
+{
+  "tasks": {
+    "dev": "deno run -A npm:@tauri-apps/cli dev",
+    "build": "deno run -A npm:@tauri-apps/cli build",
+    "fmt": "deno fmt src/ scripts/",
+    "lint": "deno lint src/ scripts/",
+    "vite": "deno run -A npm:vite"
+  },
+  "imports": {
+    "react": "npm:react@^19.2.6",
+    "react-dom": "npm:react-dom@^19.2.6",
+    "react/jsx-runtime": "npm:react@^19/jsx-runtime",
+    "react/jsx-dev-runtime": "npm:react@^19/jsx-dev-runtime",
+    "@types/react": "npm:@types/react@^19.2.14",
+    "@types/react-dom": "npm:@types/react-dom@^19.2.3",
+    "@tauri-apps/api": "npm:@tauri-apps/api@^2",
+    "@tauri-apps/plugin-opener": "npm:@tauri-apps/plugin-opener@^2",
+    "@types/node": "npm:@types/node@^22",
+    "vite": "npm:vite@^6.0.0",
+    "@vitejs/plugin-react": "npm:@vitejs/plugin-react@^4.0.0",
+    "@/": "./src/",
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1"
+  },
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext", "deno.ns"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "jsxImportSourceTypes": "@types/react",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": ["npm:vite/client"]
+  },
+  "fmt": {
+    "exclude": ["dist", "src-tauri", "node_modules", ".vite"]
+  },
+  "lint": {
+    "exclude": ["dist", "src-tauri", "node_modules", ".vite"]
+  },
+  "nodeModulesDir": "auto"
+}

@@ -31,6 +31,7 @@ jspm_packages/
 !.env.example
 
 # --- Vite / React / Frontend ---
+.vite/
 dist/
 dist-ssr/
 *.local

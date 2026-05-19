@@ -2,17 +2,47 @@
 
 > **Your week in code. Reflected, not forgotten.**
 
-DevLog is an open source desktop app for developers to run structured weekly reviews, powered by AI insights and integrated with the tools you already use. Everything is stored locally on your machine. No cloud, no accounts, no data leaving your computer.
+DevLog is an open source desktop app for developers to run structured weekly
+reviews, powered by AI insights and integrated with the tools you already use.
+Everything is stored locally on your machine. No cloud, no accounts, no data
+leaving your computer.
 
 ## Why DevLog?
 
-Most developers skip weekly reviews entirely. DevLog is a minimal, standalone desktop app built for individual developers who want to reflect on their work without the overhead.
+Most developers skip weekly reviews entirely. DevLog is a minimal, standalone
+desktop app built for individual developers who want to reflect on their work
+without the overhead.
 
 Open it, glance at your week, write your review. That's it.
- 
+
+## Getting Started
+
+### Prerequisites
+
+- [Deno](https://deno.com/)
+- [Rust](https://www.rust-lang.org/) (for Tauri backend)
+
+### Development
+
+This project uses Deno tasks for development and build processes.
+
+```bash
+# Start the development environment (Frontend + Rust backend)
+deno task dev
+
+# Build the production application
+deno task build
+
+# Format source code
+deno task fmt
+
+# Lint source code
+deno task lint
+```
+
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
- 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
+for details.
+
 ---
- 
