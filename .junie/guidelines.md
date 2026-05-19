@@ -2,6 +2,7 @@
 
 - Do not use `git commit` automatically. Only commit when explicitly requested
   by the user.
+- Do not update RFCs documentation in the `rfcs/` directory.
 
 ## Project Execution
 
