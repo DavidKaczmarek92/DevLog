@@ -121,8 +121,8 @@ devlog/
   "tasks": {
     "dev": "deno run -A npm:@tauri-apps/cli tauri dev",
     "build": "deno run -A npm:@tauri-apps/cli tauri build",
-    "fmt": "deno fmt src/ scripts/",
-    "lint": "deno lint src/ scripts/"
+    "fmt": "deno fmt",
+    "lint": "deno lint"
   },
   "imports": {
     "react": "npm:react@^18",
@@ -208,6 +208,8 @@ serde_json = "1"
 ## Bootstrapping Steps
 
 ### Prerequisites
+
+> **Security Note:** It is recommended to verify installation scripts before running them or to follow the official installation instructions from [rustup.rs](https://rustup.rs/) and [deno.com](https://docs.deno.com/runtime/manual/getting_started/installation). Alternatively, use official package managers (e.g., `brew`, `apt`, `pacman`) where available to reduce supply-chain risks.
 
 ```bash
 # Install Rust
