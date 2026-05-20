@@ -20,6 +20,7 @@
     "npm:@types/react@19.2.15": "19.2.15",
     "npm:@vitejs/plugin-react@4.7.0": "4.7.0_vite@6.4.2__@types+node@22.19.19__picomatch@4.0.4_@babel+core@7.29.0_@types+node@22.19.19",
     "npm:autoprefixer@10.5.0": "10.5.0_postcss@8.5.15",
+    "npm:class-variance-authority@0.7.1": "0.7.1",
     "npm:clsx@2.1.1": "2.1.1",
     "npm:jsdom@26.1.0": "26.1.0",
     "npm:lucide-react@0.454.0": "0.454.0_react@19.2.6",
@@ -1453,6 +1454,12 @@
         "is-glob",
         "normalize-path",
         "readdirp"
+      ]
+    },
+    "class-variance-authority@0.7.1": {
+      "integrity": "sha512-Ka+9Trutv7G8M6WT6SeiRWz792K5qEqIGEGzXKhAE6xOWAY6pPH8U+9IY3oCMv6kqTmLsv7Xh/2w2RigkePMsg==",
+      "dependencies": [
+        "clsx"
       ]
     },
     "cli-cursor@4.0.0": {
@@ -3581,6 +3588,7 @@
       "npm:@types/react@19.2.15",
       "npm:@vitejs/plugin-react@4.7.0",
       "npm:autoprefixer@10.5.0",
+      "npm:class-variance-authority@0.7.1",
       "npm:clsx@2.1.1",
       "npm:jsdom@26.1.0",
       "npm:lucide-react@0.454.0",

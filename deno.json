@@ -27,6 +27,7 @@
     "tailwindcss-animate": "npm:tailwindcss-animate@1.0.7",
     "clsx": "npm:clsx@2.1.1",
     "tailwind-merge": "npm:tailwind-merge@2.6.1",
+    "class-variance-authority": "npm:class-variance-authority@0.7.1",
     "lucide-react": "npm:lucide-react@0.454.0",
     "shadcn": "npm:shadcn@2.10.0",
     "@radix-ui/react-slot": "npm:@radix-ui/react-slot@1.2.4",
