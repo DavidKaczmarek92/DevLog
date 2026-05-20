@@ -30,7 +30,6 @@
     "lucide-react": "npm:lucide-react@^0.454.0",
     "shadcn": "npm:shadcn@^2.4.0",
     "@radix-ui/react-slot": "npm:@radix-ui/react-slot@^1.2.4",
-    "class-variance-authority": "npm:class-variance-authority@^0.7.1",
     "storybook": "npm:storybook@^8.0.0",
     "@storybook/react-vite": "npm:@storybook/react-vite@^8.0.0",
     "@storybook/react": "npm:@storybook/react@^8.0.0",
@@ -44,18 +43,19 @@
     "vitest": "npm:vitest@^3.0.5",
     "jsdom": "npm:jsdom@^26.0.0",
     "@testing-library/react": "npm:@testing-library/react@^16.2.0",
-    "@testing-library/jest-dom": "npm:@testing-library/jest-dom@^6.6.3"
+    "@testing-library/jest-dom": "npm:@testing-library/jest-dom@^6.6.3",
+    "@testing-library/jest-dom/vitest": "npm:@testing-library/jest-dom@^6.6.3/vitest"
   },
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext", "deno.ns"],
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "jsxImportSourceTypes": "@types/react",
+    "jsxImportSourceTypes": "npm:@types/react@^19",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["npm:vite/client", "npm:@types/node", "npm:@types/react", "npm:@types/react-dom"]
+    "types": ["npm:vite/client", "npm:@types/node", "npm:@types/react@^19", "npm:@types/react-dom"]
   },
   "fmt": {
     "exclude": ["dist", "src-tauri", "node_modules", ".vite"]
