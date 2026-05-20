@@ -1,45 +1,39 @@
 {
   "version": "4",
   "specifiers": {
-    "npm:@deno/vite-plugin@1": "1.0.6_vite@6.4.2__@types+node@22.19.19__picomatch@4.0.4_@types+node@22.19.19",
-    "npm:@radix-ui/react-slot@^1.2.4": "1.2.4_@types+react@19.2.15_react@19.2.6",
-    "npm:@storybook/addon-essentials@8": "8.6.14_storybook@8.6.18_@types+react@19.2.15",
-    "npm:@storybook/addon-interactions@8": "8.6.14_storybook@8.6.18",
-    "npm:@storybook/addon-links@8": "8.6.18_react@19.2.6_storybook@8.6.18",
-    "npm:@storybook/addon-onboarding@8": "8.6.18_storybook@8.6.18",
-    "npm:@storybook/blocks@8": "8.6.14_react@19.2.6_react-dom@19.2.6__react@19.2.6_storybook@8.6.18",
-    "npm:@storybook/react-vite@8": "8.6.18_react@19.2.6_react-dom@19.2.6__react@19.2.6_storybook@8.6.18_vite@6.4.2__@types+node@22.19.19__picomatch@4.0.4_@types+node@22.19.19",
-    "npm:@storybook/react@8": "8.6.18_react@19.2.6_react-dom@19.2.6__react@19.2.6_storybook@8.6.18",
-    "npm:@storybook/test@8": "8.6.15_storybook@8.6.18_@testing-library+dom@10.4.0",
-    "npm:@tauri-apps/api@2": "2.11.0",
-    "npm:@tauri-apps/plugin-opener@2": "2.5.4",
-    "npm:@testing-library/jest-dom@^6.6.3": "6.9.1",
-    "npm:@testing-library/react@^16.2.0": "16.3.2_@testing-library+dom@10.4.0_@types+react@19.2.15_@types+react-dom@19.2.3__@types+react@19.2.15_react@19.2.6_react-dom@19.2.6__react@19.2.6",
-    "npm:@types/node@*": "22.5.4",
-    "npm:@types/node@^22.11.0": "22.19.19",
-    "npm:@types/react-dom@*": "19.2.3_@types+react@19.2.15",
-    "npm:@types/react-dom@^19.2.3": "19.2.3_@types+react@19.2.15",
-    "npm:@types/react@*": "19.2.15",
-    "npm:@types/react@^19.2.14": "19.2.15",
-    "npm:@vitejs/plugin-react@4": "4.7.0_vite@6.4.2__@types+node@22.19.19__picomatch@4.0.4_@babel+core@7.29.0_@types+node@22.19.19",
-    "npm:autoprefixer@^10.4.19": "10.5.0_postcss@8.5.15",
-    "npm:class-variance-authority@~0.7.1": "0.7.1",
-    "npm:clsx@^2.1.1": "2.1.1",
-    "npm:jsdom@26": "26.1.0",
-    "npm:lucide-react@0.454": "0.454.0_react@19.2.6",
-    "npm:postcss@^8.4.38": "8.5.15",
-    "npm:react-dom@^19.2.6": "19.2.6_react@19.2.6",
-    "npm:react@19": "19.2.6",
-    "npm:react@^19.2.6": "19.2.6",
-    "npm:shadcn@^2.4.0": "2.10.0_@babel+core@7.29.0_zod@3.25.76_@types+node@22.19.19",
-    "npm:storybook@8": "8.6.18",
-    "npm:tailwind-merge@^2.3.0": "2.6.1",
-    "npm:tailwindcss-animate@^1.0.7": "1.0.7_tailwindcss@3.4.19__postcss@8.5.15__jiti@1.21.7",
-    "npm:tailwindcss@^3.4.1": "3.4.19_postcss@8.5.15_jiti@1.21.7",
-    "npm:vite@*": "6.4.2_@types+node@22.5.4_picomatch@4.0.4",
-    "npm:vite@6": "6.4.2_@types+node@22.5.4_picomatch@4.0.4",
-    "npm:vitest@*": "3.2.4_@types+node@22.5.4_jsdom@26.1.0_vite@6.4.2__@types+node@22.5.4__picomatch@4.0.4",
-    "npm:vitest@^3.0.5": "3.2.4_@types+node@22.5.4_jsdom@26.1.0_vite@6.4.2__@types+node@22.5.4__picomatch@4.0.4"
+    "npm:@deno/vite-plugin@1.0.6": "1.0.6_vite@6.4.2__@types+node@22.19.19__picomatch@4.0.4_@types+node@22.19.19",
+    "npm:@radix-ui/react-slot@1.2.4": "1.2.4_@types+react@19.2.15_react@19.2.6",
+    "npm:@storybook/addon-essentials@8.6.14": "8.6.14_storybook@8.6.18_@types+react@19.2.15",
+    "npm:@storybook/addon-interactions@8.6.14": "8.6.14_storybook@8.6.18",
+    "npm:@storybook/addon-links@8.6.18": "8.6.18_react@19.2.6_storybook@8.6.18",
+    "npm:@storybook/addon-onboarding@8.6.18": "8.6.18_storybook@8.6.18",
+    "npm:@storybook/blocks@8.6.14": "8.6.14_react@19.2.6_react-dom@19.2.6__react@19.2.6_storybook@8.6.18",
+    "npm:@storybook/react-vite@8.6.18": "8.6.18_react@19.2.6_react-dom@19.2.6__react@19.2.6_storybook@8.6.18_vite@6.4.2__@types+node@22.19.19__picomatch@4.0.4_@types+node@22.19.19",
+    "npm:@storybook/react@8.6.18": "8.6.18_react@19.2.6_react-dom@19.2.6__react@19.2.6_storybook@8.6.18",
+    "npm:@storybook/test@8.6.15": "8.6.15_storybook@8.6.18_@testing-library+dom@10.4.0",
+    "npm:@tauri-apps/api@2.11.0": "2.11.0",
+    "npm:@tauri-apps/plugin-opener@2.5.4": "2.5.4",
+    "npm:@testing-library/jest-dom@6.9.1": "6.9.1",
+    "npm:@testing-library/react@16.3.2": "16.3.2_@testing-library+dom@10.4.0_@types+react@19.2.15_@types+react-dom@19.2.3__@types+react@19.2.15_react@19.2.6_react-dom@19.2.6__react@19.2.6",
+    "npm:@types/node@22.19.19": "22.19.19",
+    "npm:@types/react-dom@19.2.3": "19.2.3_@types+react@19.2.15",
+    "npm:@types/react@19.2.15": "19.2.15",
+    "npm:@vitejs/plugin-react@4.7.0": "4.7.0_vite@6.4.2__@types+node@22.19.19__picomatch@4.0.4_@babel+core@7.29.0_@types+node@22.19.19",
+    "npm:autoprefixer@10.5.0": "10.5.0_postcss@8.5.15",
+    "npm:clsx@2.1.1": "2.1.1",
+    "npm:jsdom@26.1.0": "26.1.0",
+    "npm:lucide-react@0.454.0": "0.454.0_react@19.2.6",
+    "npm:postcss@8.5.15": "8.5.15",
+    "npm:react-dom@19.2.6": "19.2.6_react@19.2.6",
+    "npm:react@19.2.6": "19.2.6",
+    "npm:shadcn@2.10.0": "2.10.0_@babel+core@7.29.0_zod@3.25.76_@types+node@22.19.19",
+    "npm:storybook@8.6.18": "8.6.18",
+    "npm:tailwind-merge@2.6.1": "2.6.1",
+    "npm:tailwindcss-animate@1.0.7": "1.0.7_tailwindcss@3.4.19__postcss@8.5.15__jiti@1.21.7",
+    "npm:tailwindcss@3.4.19": "3.4.19_postcss@8.5.15_jiti@1.21.7",
+    "npm:vite@6.4.2": "6.4.2_@types+node@22.19.19_picomatch@4.0.4",
+    "npm:vitest@*": "3.2.4_@types+node@22.19.19_jsdom@26.1.0_vite@6.4.2__@types+node@22.19.19__picomatch@4.0.4",
+    "npm:vitest@3.2.4": "3.2.4_@types+node@22.19.19_jsdom@26.1.0_vite@6.4.2__@types+node@22.19.19__picomatch@4.0.4"
   },
   "npm": {
     "@adobe/css-tools@4.4.4": {
@@ -297,7 +291,7 @@
     "@deno/vite-plugin@1.0.6_vite@6.4.2__@types+node@22.19.19__picomatch@4.0.4_@types+node@22.19.19": {
       "integrity": "sha512-Sh5XqvFuKAwjARTesi0n6xRpEXm1V0UeqKh+SxIrexCofxOaieNDMqXZD02RiZCg0mrJ43V8eCMuVrDfq6mLmg==",
       "dependencies": [
-        "vite@6.4.2_@types+node@22.19.19_picomatch@4.0.4"
+        "vite"
       ]
     },
     "@esbuild/aix-ppc64@0.25.12": {
@@ -434,7 +428,7 @@
         "glob",
         "magic-string@0.27.0",
         "react-docgen-typescript",
-        "vite@6.4.2_@types+node@22.19.19_picomatch@4.0.4"
+        "vite"
       ]
     },
     "@jridgewell/gen-mapping@0.3.13": {
@@ -779,7 +773,7 @@
         "browser-assert",
         "storybook",
         "ts-dedent",
-        "vite@6.4.2_@types+node@22.19.19_picomatch@4.0.4"
+        "vite"
       ]
     },
     "@storybook/components@8.6.18_storybook@8.6.18": {
@@ -887,7 +881,7 @@
         "resolve",
         "storybook",
         "tsconfig-paths",
-        "vite@6.4.2_@types+node@22.19.19_picomatch@4.0.4"
+        "vite"
       ]
     },
     "@storybook/react@8.6.18_react@19.2.6_react-dom@19.2.6__react@19.2.6_storybook@8.6.18": {
@@ -951,7 +945,7 @@
         "@babel/code-frame",
         "@babel/runtime",
         "@types/aria-query",
-        "aria-query",
+        "aria-query@5.3.0",
         "chalk@4.1.2",
         "dom-accessibility-api@0.5.16",
         "lz-string",
@@ -962,7 +956,7 @@
       "integrity": "sha512-xGGHpBXYSHUUr6XsKBfs85TWlYKpTc37cSBBVrXcib2MkHLboWlkClhWF37JKlDb9KEq3dHs+f2xR7XJEWGBxA==",
       "dependencies": [
         "@adobe/css-tools",
-        "aria-query",
+        "aria-query@5.3.2",
         "chalk@3.0.0",
         "css.escape",
         "dom-accessibility-api@0.6.3",
@@ -974,7 +968,7 @@
       "integrity": "sha512-zIcONa+hVtVSSep9UT3jZ5rizo2BsxgyDYU7WFD5eICBE7no3881HGeb/QkGfsJs6JTkY1aQhT7rIPC7e+0nnA==",
       "dependencies": [
         "@adobe/css-tools",
-        "aria-query",
+        "aria-query@5.3.2",
         "css.escape",
         "dom-accessibility-api@0.6.3",
         "picocolors",
@@ -1109,7 +1103,7 @@
         "@rolldown/pluginutils",
         "@types/babel__core",
         "react-refresh",
-        "vite@6.4.2_@types+node@22.19.19_picomatch@4.0.4"
+        "vite"
       ]
     },
     "@vitest/expect@2.0.5": {
@@ -1131,13 +1125,13 @@
         "tinyrainbow@2.0.0"
       ]
     },
-    "@vitest/mocker@3.2.4_vite@6.4.2__@types+node@22.5.4__picomatch@4.0.4_@types+node@22.5.4": {
+    "@vitest/mocker@3.2.4_vite@6.4.2__@types+node@22.19.19__picomatch@4.0.4_@types+node@22.19.19": {
       "integrity": "sha512-46ryTE9RZO/rfDd7pEqFl7etuyzekzEhUbTW3BvmeO/BcCMEgq59BKhek3dXDWgAj4oMK6OZi+vRr1wPW6qjEQ==",
       "dependencies": [
         "@vitest/spy@3.2.4",
         "estree-walker@3.0.3",
         "magic-string@0.30.21",
-        "vite@6.4.2_@types+node@22.5.4_picomatch@4.0.4"
+        "vite"
       ]
     },
     "@vitest/pretty-format@2.0.5": {
@@ -1278,6 +1272,9 @@
       "dependencies": [
         "dequal"
       ]
+    },
+    "aria-query@5.3.2": {
+      "integrity": "sha512-COROpnaoap1E2F000S62r6A60uHZnmlvomhfyT2DlTcrY1OrBKn2UhH7qn5wTC9zMvD0AY7csdPSNwKP+7WiQw=="
     },
     "assertion-error@2.0.1": {
       "integrity": "sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA=="
@@ -1456,12 +1453,6 @@
         "is-glob",
         "normalize-path",
         "readdirp"
-      ]
-    },
-    "class-variance-authority@0.7.1": {
-      "integrity": "sha512-Ka+9Trutv7G8M6WT6SeiRWz792K5qEqIGEGzXKhAE6xOWAY6pPH8U+9IY3oCMv6kqTmLsv7Xh/2w2RigkePMsg==",
-      "dependencies": [
-        "clsx"
       ]
     },
     "cli-cursor@4.0.0": {
@@ -3392,14 +3383,14 @@
     "vary@1.1.2": {
       "integrity": "sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg=="
     },
-    "vite-node@3.2.4_@types+node@22.5.4": {
+    "vite-node@3.2.4_@types+node@22.19.19": {
       "integrity": "sha512-EbKSKh+bh1E1IFxeO0pg1n4dvoOTt0UDiXMd/qn++r98+jPO1xtJilvXldeuQ8giIB5IkpjCgMleHMNEsGH6pg==",
       "dependencies": [
         "cac",
         "debug",
         "es-module-lexer",
         "pathe",
-        "vite@6.4.2_@types+node@22.5.4_picomatch@4.0.4"
+        "vite"
       ]
     },
     "vite@6.4.2_@types+node@22.19.19_picomatch@4.0.4": {
@@ -3415,24 +3406,11 @@
         "tinyglobby"
       ]
     },
-    "vite@6.4.2_@types+node@22.5.4_picomatch@4.0.4": {
-      "integrity": "sha512-2N/55r4JDJ4gdrCvGgINMy+HH3iRpNIz8K6SFwVsA+JbQScLiC+clmAxBgwiSPgcG9U15QmvqCGWzMbqda5zGQ==",
-      "dependencies": [
-        "@types/node@22.5.4",
-        "esbuild",
-        "fdir",
-        "fsevents",
-        "picomatch@4.0.4",
-        "postcss",
-        "rollup",
-        "tinyglobby"
-      ]
-    },
-    "vitest@3.2.4_@types+node@22.5.4_jsdom@26.1.0_vite@6.4.2__@types+node@22.5.4__picomatch@4.0.4": {
+    "vitest@3.2.4_@types+node@22.19.19_jsdom@26.1.0_vite@6.4.2__@types+node@22.19.19__picomatch@4.0.4": {
       "integrity": "sha512-LUCP5ev3GURDysTWiP47wRRUpLKMOfPh+yKTx3kVIEiu5KOMeqzpnYNsKyOoVrULivR8tLcks4+lga33Whn90A==",
       "dependencies": [
         "@types/chai",
-        "@types/node@22.5.4",
+        "@types/node@22.19.19",
         "@vitest/expect@3.2.4",
         "@vitest/mocker",
         "@vitest/pretty-format@3.2.4",
@@ -3453,7 +3431,7 @@
         "tinyglobby",
         "tinypool",
         "tinyrainbow@2.0.0",
-        "vite@6.4.2_@types+node@22.5.4_picomatch@4.0.4",
+        "vite",
         "vite-node",
         "why-is-node-running"
       ]
@@ -3584,44 +3562,38 @@
   },
   "workspace": {
     "dependencies": [
-      "npm:@deno/vite-plugin@1",
-      "npm:@radix-ui/react-slot@^1.2.4",
-      "npm:@storybook/addon-essentials@8",
-      "npm:@storybook/addon-interactions@8",
-      "npm:@storybook/addon-links@8",
-      "npm:@storybook/addon-onboarding@8",
-      "npm:@storybook/blocks@8",
-      "npm:@storybook/react-vite@8",
-      "npm:@storybook/react@8",
-      "npm:@storybook/test@8",
-      "npm:@tauri-apps/api@2",
-      "npm:@tauri-apps/plugin-opener@2",
-      "npm:@testing-library/jest-dom@^6.6.3",
-      "npm:@testing-library/react@^16.2.0",
-      "npm:@types/node@*",
-      "npm:@types/node@^22.11.0",
-      "npm:@types/react-dom@*",
-      "npm:@types/react-dom@^19.2.3",
-      "npm:@types/react@*",
-      "npm:@types/react@^19.2.14",
-      "npm:@vitejs/plugin-react@4",
-      "npm:autoprefixer@^10.4.19",
-      "npm:class-variance-authority@~0.7.1",
-      "npm:clsx@^2.1.1",
-      "npm:jsdom@26",
-      "npm:lucide-react@0.454",
-      "npm:postcss@^8.4.38",
-      "npm:react-dom@^19.2.6",
-      "npm:react@19",
-      "npm:react@^19.2.6",
-      "npm:shadcn@^2.4.0",
-      "npm:storybook@8",
-      "npm:tailwind-merge@^2.3.0",
-      "npm:tailwindcss-animate@^1.0.7",
-      "npm:tailwindcss@^3.4.1",
-      "npm:vite@*",
-      "npm:vite@6",
-      "npm:vitest@^3.0.5"
+      "npm:@deno/vite-plugin@1.0.6",
+      "npm:@radix-ui/react-slot@1.2.4",
+      "npm:@storybook/addon-essentials@8.6.14",
+      "npm:@storybook/addon-interactions@8.6.14",
+      "npm:@storybook/addon-links@8.6.18",
+      "npm:@storybook/addon-onboarding@8.6.18",
+      "npm:@storybook/blocks@8.6.14",
+      "npm:@storybook/react-vite@8.6.18",
+      "npm:@storybook/react@8.6.18",
+      "npm:@storybook/test@8.6.15",
+      "npm:@tauri-apps/api@2.11.0",
+      "npm:@tauri-apps/plugin-opener@2.5.4",
+      "npm:@testing-library/jest-dom@6.9.1",
+      "npm:@testing-library/react@16.3.2",
+      "npm:@types/node@22.19.19",
+      "npm:@types/react-dom@19.2.3",
+      "npm:@types/react@19.2.15",
+      "npm:@vitejs/plugin-react@4.7.0",
+      "npm:autoprefixer@10.5.0",
+      "npm:clsx@2.1.1",
+      "npm:jsdom@26.1.0",
+      "npm:lucide-react@0.454.0",
+      "npm:postcss@8.5.15",
+      "npm:react-dom@19.2.6",
+      "npm:react@19.2.6",
+      "npm:shadcn@2.10.0",
+      "npm:storybook@8.6.18",
+      "npm:tailwind-merge@2.6.1",
+      "npm:tailwindcss-animate@1.0.7",
+      "npm:tailwindcss@3.4.19",
+      "npm:vite@6.4.2",
+      "npm:vitest@3.2.4"
     ]
   }
 }
