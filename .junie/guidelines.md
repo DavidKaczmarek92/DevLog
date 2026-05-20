@@ -5,7 +5,7 @@
   current branch using `git branch --show-current` to ensure you are on a feature
   branch.
 - Push changes only from feature branches (not `main`) after
-  verifying `deno task fmt`, `deno task lint`, and `deno task type-check` succeed.
+  verifying `deno task fmt`, `deno task lint` and `deno task type-check` succeed.
 - Follow [Conventional Commits](https://www.conventionalcommits.org/) (semantic
   commit messages) for all commits to support automatic versioning and changelog
   generation.
