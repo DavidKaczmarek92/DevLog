@@ -39,6 +39,8 @@ export interface ButtonProps
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  className?: string;
+  ref?: React.Ref<HTMLButtonElement>;
 }
 
 function Button({
