@@ -1,4 +1,4 @@
-name: Test
+name: CI
 
 on:
   push:
@@ -36,6 +36,38 @@ jobs:
               - 'src-tauri/Cargo.toml'
               - 'src-tauri/Cargo.lock'
               - 'src-tauri/tauri.conf.json'
+
+  ts-lint:
+    name: TS Lint
+    needs: filter
+    if: needs.filter.outputs.ts_vitest == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install
+      - name: Run TS Lint
+        run: npm run lint
+
+  ts-type-check:
+    name: TS Type Check
+    needs: filter
+    if: needs.filter.outputs.ts_vitest == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install
+      - name: Run TS Type Check
+        run: npm run type-check
 
   ts-vitest:
     name: TS Vitest
