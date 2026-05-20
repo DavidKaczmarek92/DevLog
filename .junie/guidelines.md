@@ -12,6 +12,7 @@
 - Never force-push.
 - Abort any commit or push if sensitive files, secrets, or credentials are detected.
 - Do not update RFCs documentation in the `rfcs/` directory.
+- Use `interface` instead of `type` for React component props to improve IDE type inference and performance.
 
 ## Project Execution
 

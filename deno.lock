@@ -31,7 +31,6 @@
     "npm:tailwind-merge@2.6.1": "2.6.1",
     "npm:tailwindcss-animate@1.0.7": "1.0.7_tailwindcss@3.4.19__postcss@8.5.15__jiti@1.21.7",
     "npm:tailwindcss@3.4.19": "3.4.19_postcss@8.5.15_jiti@1.21.7",
-    "npm:vite@*": "6.4.2_@types+node@22.19.19_picomatch@4.0.4",
     "npm:vite@6.4.2": "6.4.2_@types+node@22.19.19_picomatch@4.0.4",
     "npm:vitest@*": "3.2.4_@types+node@22.19.19_jsdom@26.1.0_vite@6.4.2__@types+node@22.19.19__picomatch@4.0.4",
     "npm:vitest@3.2.4": "3.2.4_@types+node@22.19.19_jsdom@26.1.0_vite@6.4.2__@types+node@22.19.19__picomatch@4.0.4"
@@ -3593,7 +3592,6 @@
       "npm:tailwind-merge@2.6.1",
       "npm:tailwindcss-animate@1.0.7",
       "npm:tailwindcss@3.4.19",
-      "npm:vite@*",
       "npm:vite@6.4.2",
       "npm:vitest@3.2.4"
     ]

@@ -35,6 +35,8 @@ export interface ButtonProps
   asChild?: boolean;
   variant?: Variant;
   size?: Size;
+  className?: string;
+  children?: React.ReactNode;
   ref?: React.Ref<HTMLButtonElement>;
 }
 
