@@ -41,6 +41,15 @@ npm run fmt
 
 # Lint source code
 npm run lint
+
+# Type check source code
+npm run type-check
+
+# Run tests
+npm test
+
+# Start Storybook
+npm run storybook
 ```
 
 ## License
