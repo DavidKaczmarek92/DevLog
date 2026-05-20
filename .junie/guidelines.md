@@ -1,7 +1,16 @@
 # Guidelines
 
-- Do not use `git commit` automatically. Only commit when explicitly requested
-  by the user.
+- Commit changes automatically only when a task is completed or a significant
+  milestone is reached. Do NOT commit directly to `main`; verify the
+  current branch using `git branch --show-current` to ensure you are on a feature
+  branch.
+- Push changes only from feature branches (not `main`) after
+  verifying `deno task fmt` and `deno task lint` succeed.
+- Follow [Conventional Commits](https://www.conventionalcommits.org/) (semantic
+  commit messages) for all commits to support automatic versioning and changelog
+  generation.
+- Never force-push.
+- Abort any commit or push if sensitive files, secrets, or credentials are detected.
 - Do not update RFCs documentation in the `rfcs/` directory.
 
 ## Project Execution
