@@ -1,8 +1,8 @@
-import { useState, type FormEvent, type ChangeEvent } from "react";
+import { type ChangeEvent, type FormEvent, useState } from "react";
 // @ts-expect-error: Deno might not see the svg type yet
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
-import "./App.css";
+import { Button } from "@/components/ui/button";
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -38,10 +38,12 @@ function App() {
       >
         <input
           id="greet-input"
-          onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.currentTarget.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setName(e.currentTarget.value)}
           placeholder="Enter a name..."
+          className="rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mr-2"
         />
-        <button type="submit">Greet</button>
+        <Button type="submit">Greet</Button>
       </form>
 
       <p>{greetMsg}</p>

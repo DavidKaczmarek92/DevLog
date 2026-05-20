@@ -1,11 +1,17 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import deno from "@deno/vite-plugin";
+import path from "node:path";
 
 const host = Deno.env.get("TAURI_DEV_HOST");
 
 export default defineConfig(() => ({
-  plugins: [react(),deno()],
+  plugins: [react(), deno()],
+  resolve: {
+    alias: {
+      "@": path.resolve(import.meta.dirname || ".", "./src"),
+    },
+  },
 
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
   //
