@@ -1,9 +1,11 @@
 # Guidelines
 
 - Commit changes automatically only when a task is completed or a significant
-  milestone is reached, and only on the current non-protected feature branch.
-- Push changes only from the current non-protected feature branch after verifying
-  `deno task fmt` and `deno task lint` succeed.
+  milestone is reached. Do NOT commit directly to `main` or `master`; verify the
+  current branch using `git branch --show-current` to ensure you are on a feature
+  branch.
+- Push changes only from feature branches (not `main` or `master`) after
+  verifying `deno task fmt` and `deno task lint` succeed.
 - Follow [Conventional Commits](https://www.conventionalcommits.org/) (semantic
   commit messages) for all commits to support automatic versioning and changelog
   generation.
