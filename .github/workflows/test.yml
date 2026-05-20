@@ -25,6 +25,8 @@ jobs:
             ts_vitest:
               - 'src/**'
               - 'deno.json'
+              - 'deno.lock'
+              - 'components.json'
               - 'vite.config.ts'
               - 'tailwind.config.ts'
               - 'postcss.config.js'
@@ -33,6 +35,7 @@ jobs:
               - 'src-tauri/**/*.rs'
               - 'src-tauri/Cargo.toml'
               - 'src-tauri/Cargo.lock'
+              - 'src-tauri/tauri.conf.json'
 
   ts-vitest:
     name: TS Vitest
