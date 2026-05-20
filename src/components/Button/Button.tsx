@@ -30,13 +30,12 @@ const buttonStyles = {
 type Variant = keyof typeof buttonStyles.variants.variant;
 type Size = keyof typeof buttonStyles.variants.size;
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   asChild?: boolean;
   variant?: Variant;
   size?: Size;
   ref?: React.Ref<HTMLButtonElement>;
-}
+};
 
 const buttonVariants = ({
   variant = "default",
