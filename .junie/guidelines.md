@@ -1,7 +1,14 @@
 # Guidelines
 
-- Commit and push changes automatically when a task is completed or a significant
-  milestone is reached.
+- Commit changes automatically only when a task is completed or a significant
+  milestone is reached, and only on the current non-protected feature branch.
+- Push changes only from the current non-protected feature branch after verifying
+  `deno task fmt` and `deno task lint` succeed.
+- Follow [Conventional Commits](https://www.conventionalcommits.org/) (semantic
+  commit messages) for all commits to support automatic versioning and changelog
+  generation.
+- Never force-push.
+- Abort any commit or push if sensitive files, secrets, or credentials are detected.
 - Do not update RFCs documentation in the `rfcs/` directory.
 
 ## Project Execution
