@@ -7,7 +7,8 @@
     "vite": "deno run -A npm:vite",
     "storybook": "node node_modules/.bin/storybook dev -p 6006",
     "storybook-build": "node node_modules/.bin/storybook build",
-    "test": "deno run -A npm:vitest run"
+    "test": "deno run -A npm:vitest run",
+    "type-check": "deno check src/main.tsx"
   },
   "imports": {
     "react": "npm:react@19.2.6",
