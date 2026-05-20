@@ -2,12 +2,42 @@ name: Test
 
 on:
   push:
-    branches: [ main, "feat/**" ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      frontend: ${{ steps.filter.outputs.frontend }}
+      backend: ${{ steps.filter.outputs.backend }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            frontend:
+              - 'src/**'
+              - 'deno.json'
+              - 'vite.config.ts'
+              - 'tailwind.config.ts'
+              - 'postcss.config.js'
+              - 'index.html'
+            backend:
+              - 'src-tauri/**/*.rs'
+              - 'src-tauri/Cargo.toml'
+              - 'src-tauri/Cargo.lock'
+
   frontend-test:
+    name: Frontend (Vitest)
+    needs: filter
+    if: needs.filter.outputs.frontend == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,6 +48,9 @@ jobs:
         run: deno task test
 
   backend-test:
+    name: Backend (Cargo)
+    needs: filter
+    if: needs.filter.outputs.backend == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
