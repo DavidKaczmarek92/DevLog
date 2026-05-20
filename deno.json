@@ -6,7 +6,8 @@
     "lint": "deno lint src/ scripts/",
     "vite": "deno run -A npm:vite",
     "storybook": "node node_modules/.bin/storybook dev -p 6006",
-    "storybook-build": "node node_modules/.bin/storybook build"
+    "storybook-build": "node node_modules/.bin/storybook build",
+    "test": "deno run -A npm:vitest run"
   },
   "imports": {
     "react": "npm:react@^19.2.6",
@@ -39,7 +40,11 @@
     "@storybook/addon-onboarding": "npm:@storybook/addon-onboarding@^8.0.0",
     "@storybook/blocks": "npm:@storybook/blocks@^8.0.0",
     "@storybook/test": "npm:@storybook/test@^8.0.0",
-    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1"
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1",
+    "vitest": "npm:vitest@^3.0.5",
+    "jsdom": "npm:jsdom@^26.0.0",
+    "@testing-library/react": "npm:@testing-library/react@^16.2.0",
+    "@testing-library/jest-dom": "npm:@testing-library/jest-dom@^6.6.3"
   },
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext", "deno.ns"],

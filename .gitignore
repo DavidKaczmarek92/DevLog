@@ -61,3 +61,4 @@ coverage/
 .next/
 out/
 build/
+.output.txt

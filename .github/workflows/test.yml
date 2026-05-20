@@ -1,0 +1,72 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      ts_vitest: ${{ steps.filter.outputs.ts_vitest }}
+      rust_test: ${{ steps.filter.outputs.rust_test }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            ts_vitest:
+              - 'src/**'
+              - 'deno.json'
+              - 'deno.lock'
+              - 'components.json'
+              - 'vite.config.ts'
+              - 'tailwind.config.ts'
+              - 'postcss.config.js'
+              - 'index.html'
+            rust_test:
+              - 'src-tauri/**/*.rs'
+              - 'src-tauri/Cargo.toml'
+              - 'src-tauri/Cargo.lock'
+              - 'src-tauri/tauri.conf.json'
+
+  ts-vitest:
+    name: TS Vitest
+    needs: filter
+    if: needs.filter.outputs.ts_vitest == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - name: Run TS Vitest
+        run: deno task test
+
+  rust-test:
+    name: Rust Test
+    needs: filter
+    if: needs.filter.outputs.rust_test == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: setup rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: install dependencies (ubuntu only)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+      - name: rust cache
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
+      - name: Run Rust Test
+        run: cargo test
+        working-directory: src-tauri
