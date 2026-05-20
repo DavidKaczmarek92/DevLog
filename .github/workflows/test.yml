@@ -34,8 +34,8 @@ jobs:
               - 'src-tauri/Cargo.toml'
               - 'src-tauri/Cargo.lock'
 
-  frontend-test:
-    name: Frontend (Vitest)
+  ts-vitest:
+    name: TS Vitest
     needs: filter
     if: needs.filter.outputs.frontend == 'true'
     runs-on: ubuntu-latest
@@ -47,8 +47,8 @@ jobs:
       - name: Run frontend tests
         run: deno task test
 
-  backend-test:
-    name: Backend (Cargo)
+  rust-test:
+    name: Rust Test
     needs: filter
     if: needs.filter.outputs.backend == 'true'
     runs-on: ubuntu-latest
