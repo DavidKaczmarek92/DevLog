@@ -1,7 +1,7 @@
 # Guidelines
 
-- Do not use `git commit` automatically. Only commit when explicitly requested
-  by the user.
+- Commit and push changes automatically when a task is completed or a significant
+  milestone is reached.
 - Do not update RFCs documentation in the `rfcs/` directory.
 
 ## Project Execution
