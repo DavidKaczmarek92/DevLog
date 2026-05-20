@@ -2,7 +2,7 @@ import { type ChangeEvent, type FormEvent, useState } from "react";
 // @ts-expect-error: Deno might not see the svg type yet
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
-import { Button } from "@/components/ui/button";
+import { Button } from "./components/ui/button.tsx";
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");

@@ -1,37 +1,41 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import deno from "@deno/vite-plugin";
-import path from "node:path";
+import process from "node:process";
 
-const host = Deno.env.get("TAURI_DEV_HOST");
+const host = typeof Deno !== "undefined" ? Deno.env.get("TAURI_DEV_HOST") : process.env.TAURI_DEV_HOST;
 
-export default defineConfig(() => ({
-  plugins: [react(), deno()],
-  resolve: {
-    alias: {
-      "@": path.resolve(import.meta.dirname || ".", "./src"),
+// @ts-ignore: Deno/Vite type mismatch due to multiple versions
+export default defineConfig(async () => {
+  const plugins = [react()];
+
+  if (typeof Deno !== "undefined") {
+    const deno = (await import("@deno/vite-plugin")).default;
+    plugins.push(deno());
+  }
+
+  return {
+    plugins,
+
+    // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
+    //
+    // 1. prevent Vite from obscuring rust errors
+    clearScreen: false,
+    // 2. tauri expects a fixed port, fail if that port is not available
+    server: {
+      port: 1420,
+      strictPort: true,
+      host: host || false,
+      hmr: host
+        ? {
+          protocol: "ws",
+          host,
+          port: 1421,
+        }
+        : undefined,
+      watch: {
+        // 3. tell Vite to ignore watching `src-tauri`
+        ignored: ["**/src-tauri/**"],
+      },
     },
-  },
-
-  // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
-  //
-  // 1. prevent Vite from obscuring rust errors
-  clearScreen: false,
-  // 2. tauri expects a fixed port, fail if that port is not available
-  server: {
-    port: 1420,
-    strictPort: true,
-    host: host || false,
-    hmr: host
-      ? {
-        protocol: "ws",
-        host,
-        port: 1421,
-      }
-      : undefined,
-    watch: {
-      // 3. tell Vite to ignore watching `src-tauri`
-      ignored: ["**/src-tauri/**"],
-    },
-  },
-}));
+  };
+});
