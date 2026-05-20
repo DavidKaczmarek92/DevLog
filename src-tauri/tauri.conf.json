@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "identifier": "dev.devlog",
   "build": {
-    "beforeDevCommand": "deno task vite",
+    "beforeDevCommand": "npm run vite",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "deno task vite build",
+    "beforeBuildCommand": "npm run vite build",
     "frontendDist": "../dist"
   },
   "app": {

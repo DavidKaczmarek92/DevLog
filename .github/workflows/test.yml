@@ -24,8 +24,8 @@ jobs:
           filters: |
             ts_vitest:
               - 'src/**'
-              - 'deno.json'
-              - 'deno.lock'
+              - 'package.json'
+              - 'package-lock.json'
               - 'components.json'
               - 'vite.config.ts'
               - 'tailwind.config.ts'
@@ -44,11 +44,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: denoland/setup-deno@v2
+      - uses: actions/setup-node@v4
         with:
-          deno-version: v2.x
+          node-version: 22
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install
       - name: Run TS Vitest
-        run: deno task test
+        run: npm test
 
   rust-test:
     name: Rust Test

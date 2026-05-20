@@ -19,25 +19,28 @@ Open it, glance at your week, write your review. That's it.
 
 ### Prerequisites
 
-- [Deno](https://deno.com/)
+- [Node.js](https://nodejs.org/) (v22 or later)
 - [Rust](https://www.rust-lang.org/) (for Tauri backend)
 
 ### Development
 
-This project uses Deno tasks for development and build processes.
+This project uses NPM for development and build processes.
 
 ```bash
+# Install dependencies
+npm install
+
 # Start the development environment (Frontend + Rust backend)
-deno task dev
+npm run dev
 
 # Build the production application
-deno task build
+npm run build
 
 # Format source code
-deno task fmt
+npm run fmt
 
 # Lint source code
-deno task lint
+npm run lint
 ```
 
 ## License

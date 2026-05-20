@@ -1,20 +1,11 @@
-import { defineConfig } from "npm:vitest/config";
+import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
-import process from "node:process";
 
-const host = typeof Deno !== "undefined" ? Deno.env.get("TAURI_DEV_HOST") : process.env.TAURI_DEV_HOST;
+const host = process.env.TAURI_DEV_HOST;
 
-// @ts-ignore: Deno/Vite type mismatch due to multiple versions
 export default defineConfig(async () => {
-  const plugins = [react()];
-
-  if (typeof Deno !== "undefined") {
-    const deno = (await import("@deno/vite-plugin")).default;
-    plugins.push(deno());
-  }
-
   return {
-    plugins,
+    plugins: [react()],
 
     // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
     //
