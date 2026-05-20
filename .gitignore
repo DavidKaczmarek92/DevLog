@@ -17,6 +17,7 @@ Thumbs.db
 # It is recommended to keep it tracked in Git.
 # If you use local-only configurations, you can uncomment the line below:
 .junie/local/
+.junie/plans/
 
 # --- Dependencies ---
 node_modules/
