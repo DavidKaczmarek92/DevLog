@@ -43,14 +43,14 @@ As a developer, I want to add a short note about something I worked on today, so
 
 **Default categories (pre-installed, each with a colour):**
 
- Category | Colour |
----|---|
- Coding | Orange |
- Meeting | Purple |
- Learning | Green |
- Design | Blue |
- Writing | Pink |
- Other | Grey |
+| Category | Colour |
+|---|---|
+| Coding | Orange |
+| Meeting | Purple |
+| Learning | Green |
+| Design | Blue |
+| Writing | Pink |
+| Other | Grey |
 
 ---
 
@@ -158,28 +158,28 @@ As a developer, I want to see my manually logged activity in the review sidebar,
 
 ## Decisions log
 
- # | Question | Decision |
----|---|---|
- 1 | Are past week entries editable? | Yes — entries are always editable, no restrictions by week |
- 2 | Can users create custom categories? | Yes — full CRUD: create, rename, recolour, delete; defaults are just a starting point |
- 3 | Does the filter persist between app sessions? | No — resets to "All" every time the app is opened |
- 4 | Where is Markdown supported? | Description field only — title stays plain text |
- 5 | How is the Markdown editor presented? | Split Write / Preview tabs in the form; rendered view in the card list |
+| # | Question | Decision |
+|---|---|---|
+| 1 | Are past week entries editable? | Yes — entries are always editable, no restrictions by week |
+| 2 | Can users create custom categories? | Yes — full CRUD: create, rename, recolour, delete; defaults are just a starting point |
+| 3 | Does the filter persist between app sessions? | No — resets to "All" every time the app is opened |
+| 4 | Where is Markdown supported? | Description field only — title stays plain text |
+| 5 | How is the Markdown editor presented? | Split Write / Preview tabs in the form; rendered view in the card list |
 
 ---
 
 ## Edge cases
 
- Situation | Expected behaviour |
----|---|
- User adds an entry dated to a past week | Entry appears in that past week's log, not the current one |
- User navigates away mid-form | Form data is discarded; no partial saves |
- Week has entries but all are filtered out | Shows "No entries match this filter" state, not the generic empty state |
- User deletes the only entry in a day group | Day heading disappears; adjacent day groups are not affected |
- User deletes a category that has entries | Warning shown; entries reassigned to "Other" on confirm |
- User deletes all categories including "Other" | Entries with no valid category are shown with a neutral "Uncategorised" label |
- User writes invalid or unsupported Markdown | Rendered as plain text — no errors, no crashes |
- Entry has a very long Markdown description | Card in the list shows a truncated preview with a "Read more" affordance |
+| Situation | Expected behaviour |
+|---|---|
+| User adds an entry dated to a past week | Entry appears in that past week's log, not the current one |
+| User navigates away mid-form | Form data is discarded; no partial saves |
+| Week has entries but all are filtered out | Shows "No entries match this filter" state, not the generic empty state |
+| User deletes the only entry in a day group | Day heading disappears; adjacent day groups are not affected |
+| User deletes a category that has entries | Warning shown; entries reassigned to "Other" on confirm |
+| User deletes all categories including "Other" | Entries with no valid category are shown with a neutral "Uncategorised" label |
+| User writes invalid or unsupported Markdown | Rendered as plain text — no errors, no crashes |
+| Entry has a very long Markdown description | Card in the list shows a truncated preview with a "Read more" affordance |
 
 ---
 
