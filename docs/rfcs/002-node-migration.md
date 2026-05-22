@@ -52,4 +52,4 @@ The handling of types for packages imported via `npm:` specifiers was unstable i
 
 ## References
 
-- This RFC supersedes the "Deno as JS runtime" decision in [RFC-001](./001-project-setup.md).
+- This RFC supersedes the "Deno as JS runtime" decision in [RFC-001](001-project-setup.md).
