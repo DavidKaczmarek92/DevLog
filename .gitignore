@@ -53,6 +53,9 @@ target/
 # Cargo.lock
 
 # --- Build / CI / Coverage ---
+.features-gen/
+playwright-report/
+test-results/
 coverage/
 *.lcov
 .nyc_output/
