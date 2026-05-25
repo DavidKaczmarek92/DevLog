@@ -65,3 +65,6 @@ coverage/
 out/
 build/
 .output.txt
+
+# --- Storybook ---
+storybook-static/
