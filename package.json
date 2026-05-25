@@ -10,9 +10,13 @@
     "test": "vitest run",
     "storybook": "storybook dev -p 6006",
     "storybook-build": "storybook build",
-    "fmt": "prettier --write src/",
-    "lint": "eslint src/",
-    "type-check": "tsc --noEmit"
+    "fmt": "prettier --write src/ e2e/ playwright.config.ts",
+    "lint": "eslint src/ e2e/ playwright.config.ts",
+    "type-check": "tsc --noEmit",
+    "e2e:ui": "node scripts/build-tauri.js && bddgen && playwright test --ui",
+    "e2e:debug": "node scripts/build-tauri.js && bddgen && playwright test --debug",
+    "e2e:ci": "bddgen && playwright test",
+    "e2e:gen": "bddgen"
   },
   "dependencies": {
     "@radix-ui/react-slot": "1.2.4",
@@ -27,6 +31,7 @@
   },
   "devDependencies": {
     "@eslint/js": "9.20.0",
+    "@playwright/test": "1.60.0",
     "@storybook/addon-essentials": "8.6.18",
     "@storybook/addon-interactions": "8.6.18",
     "@storybook/addon-links": "8.6.18",
@@ -48,6 +53,7 @@
     "eslint-plugin-react-refresh": "0.4.19",
     "globals": "15.15.0",
     "jsdom": "26.1.0",
+    "playwright-bdd": "8.5.1",
     "postcss": "8.5.15",
     "prettier": "3.5.1",
     "shadcn": "2.10.0",

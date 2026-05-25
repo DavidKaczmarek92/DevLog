@@ -53,6 +53,9 @@ target/
 # Cargo.lock
 
 # --- Build / CI / Coverage ---
+.features-gen/
+playwright-report/
+test-results/
 coverage/
 *.lcov
 .nyc_output/
@@ -62,3 +65,6 @@ coverage/
 out/
 build/
 .output.txt
+
+# --- Storybook ---
+storybook-static/

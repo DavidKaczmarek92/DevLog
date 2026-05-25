@@ -16,6 +16,7 @@ jobs:
     outputs:
       ts_vitest: ${{ steps.filter.outputs.ts_vitest }}
       rust_test: ${{ steps.filter.outputs.rust_test }}
+      e2e_test: ${{ steps.filter.outputs.e2e_test }}
     steps:
       - uses: actions/checkout@v4
       - uses: dorny/paths-filter@v3
@@ -36,6 +37,9 @@ jobs:
               - 'src-tauri/Cargo.toml'
               - 'src-tauri/Cargo.lock'
               - 'src-tauri/tauri.conf.json'
+            e2e_test:
+              - 'e2e/**'
+              - 'playwright.config.ts'
 
   ts-lint:
     name: TS Lint
@@ -105,3 +109,27 @@ jobs:
       - name: Run Rust Test
         run: cargo test
         working-directory: src-tauri
+
+  e2e-test:
+    name: E2E Test
+    needs: filter
+    if: needs.filter.outputs.ts_vitest == 'true' || needs.filter.outputs.rust_test == 'true' || needs.filter.outputs.e2e_test == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install
+      - name: Install Playwright Browsers
+        run: npx playwright install chromium --with-deps
+      - name: Run E2E Tests
+        run: npm run e2e:ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
