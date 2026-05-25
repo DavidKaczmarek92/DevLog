@@ -13,7 +13,7 @@
     "fmt": "prettier --write src/ e2e/ playwright.config.ts",
     "lint": "eslint src/ e2e/ playwright.config.ts",
     "type-check": "tsc --noEmit",
-    "e2e": "bddgen && playwright test",
+    "e2e": "node scripts/pre-e2e.js && bddgen && playwright test",
     "e2e:gen": "bddgen"
   },
   "dependencies": {

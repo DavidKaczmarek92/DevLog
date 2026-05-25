@@ -10,6 +10,7 @@ export default defineConfig({
   testDir,
   reporter: "html",
   use: {
+    baseURL: "http://localhost:1420",
     trace: "on-first-retry",
   },
   projects: [
@@ -18,4 +19,11 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"] },
     },
   ],
+  webServer: {
+    command: "npm run vite",
+    url: "http://localhost:1420",
+    reuseExistingServer: !process.env.CI,
+    stdout: "pipe",
+    stderr: "pipe",
+  },
 });
