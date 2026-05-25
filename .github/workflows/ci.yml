@@ -121,24 +121,12 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
-      - name: setup rust
-        uses: dtolnay/rust-toolchain@stable
-      - name: install dependencies (ubuntu only)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf xvfb
-      - name: rust cache
-        uses: swatinem/rust-cache@v2
-        with:
-          workspaces: './src-tauri -> target'
       - name: Install dependencies
         run: npm install
-      - name: Build Tauri App
-        run: npm run build
       - name: Install Playwright Browsers
         run: npx playwright install chromium --with-deps
       - name: Run E2E Tests
-        run: xvfb-run npm run e2e:ci
+        run: npm run e2e:ci
       - uses: actions/upload-artifact@v4
         if: always()
         with:
