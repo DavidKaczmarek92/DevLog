@@ -52,7 +52,7 @@
     "eslint-plugin-react-refresh": "0.4.19",
     "globals": "15.15.0",
     "jsdom": "26.1.0",
-    "playwright-bdd": "8.5.1",
+    "playwright-bdd": "6.6.0",
     "postcss": "8.5.15",
     "prettier": "3.5.1",
     "shadcn": "2.10.0",
