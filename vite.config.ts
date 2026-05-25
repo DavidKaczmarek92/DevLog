@@ -1,4 +1,4 @@
-import { defineConfig } from "vitest/config";
+import { defineConfig, defaultExclude } from "vitest/config";
 import react from "@vitejs/plugin-react";
 
 const host = process.env.TAURI_DEV_HOST;
@@ -32,6 +32,7 @@ export default defineConfig(async () => {
       globals: true,
       environment: "jsdom",
       setupFiles: "./src/test/setup.ts",
+      exclude: [...defaultExclude, ".features-gen/**"],
     },
   };
 });
