@@ -1,11 +1,29 @@
-# DevLog
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/devlog-wordmark-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/devlog-wordmark-light.svg">
+    <img alt="DevLog Wordmark" src="assets/devlog-wordmark-light.svg" width="400">
+  </picture>
+</div>
 
-> **Your week in code. Reflected, not forgotten.**
+<p align="center">
+  <em>Your week in code. Reflected, not forgotten.</em>
+</p>
 
 DevLog is an open source desktop app for developers to run structured weekly
 reviews, powered by AI insights and integrated with the tools you already use.
 Everything is stored locally on your machine. No cloud, no accounts, no data
 leaving your computer.
+
+## Screenshots
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/devlog-app-dark-theme.png">
+    <source media="(prefers-color-scheme: light)" srcset="assets/devlog-app-light-theme.png">
+    <img alt="DevLog App Screenshot" src="assets/devlog-app-light-theme.png" width="800">
+  </picture>
+</div>
 
 ## Why DevLog?
 
