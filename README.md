@@ -1,10 +1,10 @@
-<p align="center">
+<div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/devlog-wordmark-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/devlog-wordmark-light.svg">
     <img alt="DevLog Wordmark" src="assets/devlog-wordmark-light.svg" width="400">
   </picture>
-</p>
+</div>
 
 <p align="center">
   <em>Your week in code. Reflected, not forgotten.</em>
@@ -17,13 +17,13 @@ leaving your computer.
 
 ## Screenshots
 
-<p align="center">
+<div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/devlog-app-dark-theme.png">
     <source media="(prefers-color-scheme: light)" srcset="assets/devlog-app-light-theme.png">
     <img alt="DevLog App Screenshot" src="assets/devlog-app-light-theme.png" width="800">
   </picture>
-</p>
+</div>
 
 ## Why DevLog?
 
