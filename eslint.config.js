@@ -20,9 +20,15 @@ export default tseslint.config(
     rules: {
       ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": [
-        "warn",
+        "error",
         { allowConstantExport: true },
       ],
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+      "prefer-const": "error",
+      "no-var": "error",
+      "no-restricted-syntax": ["error", { "selector": "ImportDeclaration[source.value='react'] > ImportNamespaceSpecifier", "message": "Use direct imports instead of `import * as React from \"react\"`." }],
+      "@typescript-eslint/consistent-type-imports": ["error", { "prefer": "type-imports", "fixStyle": "inline-type-imports" }],
     },
   },
 );
