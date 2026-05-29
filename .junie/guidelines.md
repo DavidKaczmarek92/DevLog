@@ -16,6 +16,14 @@
 - Keep dependency versions pinned (avoiding carets `^` or tildes `~`) in `package.json` to ensure consistency across environments.
 - Ensure `package-lock.json` is updated whenever `package.json` changes.
 - When modifying the Rust backend, ensure `cargo test` passes in the `src-tauri` directory.
+- Always execute `npm run lint` (and `npm run fmt`, `npm run type-check`) before pushing changes.
+- Use `interface` (not `type`) for React component props (see `src/components/Button/Button.tsx:32`).
+- Prefer Tailwind CSS utility classes over inline styles or separate CSS modules in React components.
+- Follow accessibility practices (labels, alt text) in all UI components.
+- Avoid `import * as React from "react";` — use direct type imports when needed (reference `src/App.tsx`).
+- Define React components using arrow function syntax (`const Name = (props) => {}`) instead of function declarations.
+- Do not manually set `displayName` on arrow function components.
+- Use separate `functionName.types.ts` and `functionName.helpers.(ts|tsx)` files for helper functions and non-props types. React component props interfaces must be defined in the same file as the React component.
 
 ## Project Execution
 
