@@ -1,4 +1,4 @@
-import type {ButtonHTMLAttributes, ReactNode, Ref} from "react";
+import type { ButtonHTMLAttributes, ReactNode, Ref } from "react";
 import type { Variant, Size } from "./Button.types.ts";
 import { buttonVariants } from "./Button.helpers.ts";
 import { Slot } from "@radix-ui/react-slot";
