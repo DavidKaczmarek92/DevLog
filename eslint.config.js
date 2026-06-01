@@ -3,6 +3,8 @@ import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
+import eslintConfigPrettier from "eslint-config-prettier";
+import eslintPluginPrettier from "eslint-plugin-prettier";
 
 export default tseslint.config(
   { ignores: ["dist", "src-tauri"] },
@@ -29,6 +31,15 @@ export default tseslint.config(
       "no-var": "error",
       "no-restricted-syntax": ["error", { "selector": "ImportDeclaration[source.value='react'] > ImportNamespaceSpecifier", "message": "Use direct imports instead of `import * as React from \"react\"`." }],
       "@typescript-eslint/consistent-type-imports": ["error", { "prefer": "type-imports", "fixStyle": "inline-type-imports" }],
+    },
+  },
+  {
+    plugins: {
+      prettier: eslintPluginPrettier,
+    },
+    rules: {
+      ...eslintConfigPrettier.rules,
+      "prettier/prettier": "error",
     },
   },
 );
