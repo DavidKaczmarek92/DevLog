@@ -18,7 +18,7 @@ jobs:
       rust_test: ${{ steps.filter.outputs.rust_test }}
       e2e_test: ${{ steps.filter.outputs.e2e_test }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: dorny/paths-filter@v3
         id: filter
         with:
@@ -47,7 +47,7 @@ jobs:
     if: needs.filter.outputs.ts_vitest == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -63,7 +63,7 @@ jobs:
     if: needs.filter.outputs.ts_vitest == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -79,7 +79,7 @@ jobs:
     if: needs.filter.outputs.ts_vitest == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -95,7 +95,7 @@ jobs:
     if: needs.filter.outputs.rust_test == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: setup rust
         uses: dtolnay/rust-toolchain@stable
       - name: install dependencies (ubuntu only)
@@ -116,7 +116,7 @@ jobs:
     if: needs.filter.outputs.ts_vitest == 'true' || needs.filter.outputs.rust_test == 'true' || needs.filter.outputs.e2e_test == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v4
         with:
           node-version: 22
