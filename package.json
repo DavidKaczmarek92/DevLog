@@ -40,7 +40,7 @@
     "@storybook/addon-links": "8.6.18",
     "@storybook/addon-onboarding": "8.6.18",
     "@storybook/blocks": "8.6.18",
-    "@storybook/react": "8.6.18",
+    "@storybook/react": "10.4.2",
     "@storybook/react-vite": "8.6.18",
     "@storybook/test": "8.6.18",
     "@tauri-apps/cli": "2.1.0",
