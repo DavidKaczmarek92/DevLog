@@ -1,13 +1,9 @@
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import { useCallback, useEffect, useState } from "react";
 import { useIntl } from "react-intl";
 import messages from "./messages";
 import {
-  CAN_REDO_COMMAND,
-  CAN_UNDO_COMMAND,
   REDO_COMMAND,
   UNDO_COMMAND,
-  SELECTION_CHANGE_COMMAND,
   FORMAT_TEXT_COMMAND,
   $getSelection,
   $isRangeSelection,
@@ -19,7 +15,6 @@ import {
   INSERT_ORDERED_LIST_COMMAND,
   INSERT_UNORDERED_LIST_COMMAND,
 } from "@lexical/list";
-import { mergeRegister } from "@lexical/utils";
 import { Button } from "../../Button/Button";
 import {
   Bold,
@@ -34,58 +29,12 @@ import {
   Code,
   SquareCode,
 } from "lucide-react";
+import { useToolbarState } from "./hooks/useToolbarState";
 
 const ToolbarPlugin = () => {
   const [editor] = useLexicalComposerContext();
   const intl = useIntl();
-  const [canUndo, setCanUndo] = useState(false);
-  const [canRedo, setCanRedo] = useState(false);
-  const [isBold, setIsBold] = useState(false);
-  const [isItalic, setIsItalic] = useState(false);
-  const [isCode, setIsCode] = useState(false);
-
-  const updateToolbar = useCallback(() => {
-    const selection = $getSelection();
-    if ($isRangeSelection(selection)) {
-      setIsBold(selection.hasFormat("bold"));
-      setIsItalic(selection.hasFormat("italic"));
-      setIsCode(selection.hasFormat("code"));
-    }
-  }, []);
-
-  useEffect(() => {
-    return mergeRegister(
-      editor.registerUpdateListener(({ editorState }) => {
-        editorState.read(() => {
-          updateToolbar();
-        });
-      }),
-      editor.registerCommand(
-        SELECTION_CHANGE_COMMAND,
-        () => {
-          updateToolbar();
-          return false;
-        },
-        1,
-      ),
-      editor.registerCommand(
-        CAN_UNDO_COMMAND,
-        (payload) => {
-          setCanUndo(payload);
-          return false;
-        },
-        1,
-      ),
-      editor.registerCommand(
-        CAN_REDO_COMMAND,
-        (payload) => {
-          setCanRedo(payload);
-          return false;
-        },
-        1,
-      ),
-    );
-  }, [editor, updateToolbar]);
+  const { canUndo, canRedo, isBold, isItalic, isCode } = useToolbarState();
 
   return (
     <div className="flex items-center gap-1 p-1 border-b bg-muted/50">
