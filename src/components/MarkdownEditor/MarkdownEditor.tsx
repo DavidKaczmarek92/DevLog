@@ -3,6 +3,7 @@ import { cn } from "../../lib/utils";
 import { type Tab } from "./MarkdownEditor.types";
 import { CHEATSHEET_ITEMS } from "./MarkdownEditor.helpers";
 import { Button } from "../Button/Button";
+import { FormattedMessage } from "react-intl";
 
 interface MarkdownEditorProps {
   value: string;
@@ -31,7 +32,7 @@ const MarkdownEditor = ({
           )}
           onClick={() => setActiveTab("write")}
         >
-          Write
+          <FormattedMessage id="editor.tab.write" defaultMessage="Write" />
         </Button>
         <Button
           variant={activeTab === "preview" ? "secondary" : "ghost"}
@@ -42,7 +43,7 @@ const MarkdownEditor = ({
           )}
           onClick={() => setActiveTab("preview")}
         >
-          Preview
+          <FormattedMessage id="editor.tab.preview" defaultMessage="Preview" />
         </Button>
       </div>
 
@@ -56,8 +57,14 @@ const MarkdownEditor = ({
           />
           <div className="flex flex-wrap gap-4 text-xs text-muted-foreground px-1">
             {CHEATSHEET_ITEMS.map((item) => (
-              <span key={item.label}>
-                <span className="font-semibold">{item.label}:</span>{" "}
+              <span key={item.labelId}>
+                <span className="font-semibold">
+                  <FormattedMessage
+                    id={item.labelId}
+                    defaultMessage={item.defaultLabel}
+                  />
+                  :
+                </span>{" "}
                 <code className="bg-muted px-1 rounded">{item.syntax}</code>
               </span>
             ))}
@@ -67,7 +74,10 @@ const MarkdownEditor = ({
 
       {activeTab === "preview" && (
         <div className="min-h-[224px] w-full rounded-md border border-input bg-muted/30 p-4 text-muted-foreground text-sm">
-          Preview placeholder
+          <FormattedMessage
+            id="editor.preview.placeholder"
+            defaultMessage="Preview placeholder"
+          />
         </div>
       )}
     </div>
