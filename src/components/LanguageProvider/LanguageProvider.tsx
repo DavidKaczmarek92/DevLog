@@ -1,4 +1,4 @@
-import { type ReactNode, useState } from "react";
+import { type ReactNode } from "react";
 import { IntlProvider } from "react-intl";
 import enMessages from "../../i18n/en.json";
 
@@ -11,7 +11,7 @@ const messages: Record<string, Record<string, string>> = {
 };
 
 const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const [locale] = useState("en");
+  const locale = "en";
 
   return (
     <IntlProvider
