@@ -11,9 +11,9 @@ import { CodeNode, CodeHighlightNode } from "@lexical/code";
 import { LinkNode } from "@lexical/link";
 import { TRANSFORMERS } from "@lexical/markdown";
 import theme from "./theme";
-import { MarkdownPlugin } from "./plugins/MarkdownPlugin";
-import { ToolbarPlugin } from "./plugins/ToolbarPlugin";
-import { CodeHighlightPlugin } from "./plugins/CodeHighlightPlugin";
+import { MarkdownPlugin } from "./components/MarkdownPlugin";
+import { ToolbarPlugin } from "./components/ToolbarPlugin";
+import { CodeHighlightPlugin } from "./components/CodeHighlightPlugin";
 import { cn } from "../../lib/utils";
 
 interface MarkdownEditorProps {

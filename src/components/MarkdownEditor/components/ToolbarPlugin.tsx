@@ -29,7 +29,7 @@ import {
   Code,
   SquareCode,
 } from "lucide-react";
-import { useToolbarState } from "../hooks/useToolbarState";
+import { useToolbarState } from "./hooks/useToolbarState";
 
 const ToolbarPlugin = () => {
   const [editor] = useLexicalComposerContext();
