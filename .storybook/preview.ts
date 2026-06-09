@@ -1,5 +1,8 @@
 import type { Preview } from "@storybook/react";
 import "../src/index.css";
+import { createElement } from "react";
+import { IntlProvider } from "react-intl";
+import enMessages from "../src/i18n/en.json";
 
 const preview: Preview = {
   parameters: {
@@ -10,6 +13,14 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) =>
+      createElement(
+        IntlProvider,
+        { locale: "en", messages: enMessages, defaultLocale: "en" },
+        createElement(Story)
+      ),
+  ],
 };
 
 export default preview;

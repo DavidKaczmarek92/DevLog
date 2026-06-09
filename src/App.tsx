@@ -2,10 +2,12 @@ import { type ChangeEvent, type FormEvent, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
 import { Button } from "./components/Button/Button.tsx";
+import { FormattedMessage, useIntl } from "react-intl";
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
+  const intl = useIntl();
 
   async function greet() {
     setGreetMsg(await invoke("greet", { name }));
@@ -13,7 +15,9 @@ function App() {
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen text-center p-4">
-      <h1 className="text-4xl font-bold mb-8">DevLog</h1>
+      <h1 className="text-4xl font-bold mb-8">
+        <FormattedMessage id="app.title" defaultMessage="DevLog" />
+      </h1>
 
       <div className="flex justify-center gap-4 mb-8">
         <a
@@ -39,7 +43,10 @@ function App() {
         </a>
       </div>
       <p className="mb-8 text-muted-foreground">
-        Click on the Tauri, Vite, and React logos to learn more.
+        <FormattedMessage
+          id="app.description"
+          defaultMessage="Click on the Tauri, Vite, and React logos to learn more."
+        />
       </p>
 
       <form
@@ -54,10 +61,15 @@ function App() {
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             setName(e.currentTarget.value)
           }
-          placeholder="Enter a name..."
+          placeholder={intl.formatMessage({
+            id: "app.greet.placeholder",
+            defaultMessage: "Enter a name...",
+          })}
           className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 max-w-[200px]"
         />
-        <Button type="submit">Greet</Button>
+        <Button type="submit">
+          <FormattedMessage id="app.greet.button" defaultMessage="Greet" />
+        </Button>
       </form>
 
       <p className="mt-4 h-6 text-foreground">{greetMsg}</p>
