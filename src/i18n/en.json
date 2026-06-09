@@ -1,0 +1,12 @@
+{
+  "app.title": "DevLog",
+  "app.description": "Click on the Tauri, Vite, and React logos to learn more.",
+  "app.greet.placeholder": "Enter a name...",
+  "app.greet.button": "Greet",
+  "editor.tab.write": "Write",
+  "editor.tab.preview": "Preview",
+  "editor.preview.placeholder": "Preview placeholder",
+  "editor.cheatsheet.bold": "Bold",
+  "editor.cheatsheet.list": "List",
+  "editor.cheatsheet.code": "Code"
+}

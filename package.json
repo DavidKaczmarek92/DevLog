@@ -27,6 +27,7 @@
     "lucide-react": "1.17.0",
     "react": "19.2.7",
     "react-dom": "19.2.7",
+    "react-intl": "10.1.13",
     "tailwind-merge": "2.6.1",
     "tailwindcss-animate": "1.0.7"
   },
