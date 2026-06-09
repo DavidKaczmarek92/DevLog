@@ -40,4 +40,13 @@ describe("MarkdownEditor", () => {
     expect(screen.getByTitle("Inline Code")).toBeInTheDocument();
     expect(screen.getByTitle("Code Block")).toBeInTheDocument();
   });
+  it("renders code blocks correctly", async () => {
+    const onChange = vi.fn();
+    const markdown = "```javascript\nconst x = 1;\n```";
+    render(<MarkdownEditor value={markdown} onChange={onChange} />);
+
+    expect(await screen.findByText("const")).toBeInTheDocument();
+    expect(screen.getByText("x")).toBeInTheDocument();
+    expect(screen.getByText("1")).toBeInTheDocument();
+  });
 });

@@ -26,6 +26,14 @@ export const WithContent: Story = {
   },
 };
 
+export const WithCode: Story = {
+  args: {
+    value:
+      "# Code Example\n\n```javascript\nfunction greet() {\n  console.log('Hello, world!');\n}\n```",
+    onChange: () => {},
+  },
+};
+
 export const Interactive: Story = {
   render: (args) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks

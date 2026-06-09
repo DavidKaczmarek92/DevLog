@@ -13,6 +13,7 @@ import { TRANSFORMERS } from "@lexical/markdown";
 import theme from "./theme";
 import { MarkdownPlugin } from "./plugins/MarkdownPlugin";
 import { ToolbarPlugin } from "./plugins/ToolbarPlugin";
+import { CodeHighlightPlugin } from "./plugins/CodeHighlightPlugin";
 import { cn } from "../../lib/utils";
 
 interface EditorProps {
@@ -64,6 +65,7 @@ const Editor = ({ value, onChange, placeholder, className }: EditorProps) => {
         </div>
         <HistoryPlugin />
         <ListPlugin />
+        <CodeHighlightPlugin />
         <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
         <MarkdownPlugin value={value} onChange={onChange} />
       </div>
