@@ -8,6 +8,7 @@ import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
 import { HeadingNode, QuoteNode } from "@lexical/rich-text";
 import { ListItemNode, ListNode } from "@lexical/list";
 import { CodeNode, CodeHighlightNode } from "@lexical/code";
+import { LinkNode } from "@lexical/link";
 import { TRANSFORMERS } from "@lexical/markdown";
 import theme from "./theme";
 import { MarkdownPlugin } from "./plugins/MarkdownPlugin";
@@ -35,6 +36,7 @@ const Editor = ({ value, onChange, placeholder, className }: EditorProps) => {
       QuoteNode,
       CodeNode,
       CodeHighlightNode,
+      LinkNode,
     ],
   };
 

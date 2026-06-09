@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom/vitest";
-import { render, screen, fireEvent } from "../../test/test-utils";
+import { render, screen } from "../../test/test-utils";
 import { describe, expect, it, vi } from "vitest";
 import { MarkdownEditor } from "./MarkdownEditor";
 
@@ -14,48 +14,28 @@ describe("MarkdownEditor", () => {
       />,
     );
 
-    expect(
-      screen.getByPlaceholderText("Enter markdown..."),
-    ).toBeInTheDocument();
-    expect(screen.getByText("Write")).toBeInTheDocument();
-    expect(screen.getByText("Preview")).toBeInTheDocument();
+    expect(screen.getByText("Enter markdown...")).toBeInTheDocument();
+    expect(screen.getByTitle("Bold")).toBeInTheDocument();
+    expect(screen.getByTitle("Italic")).toBeInTheDocument();
   });
 
-  it("calls onChange when typing", () => {
+  it("renders provided markdown content", async () => {
     const onChange = vi.fn();
-    render(<MarkdownEditor value="" onChange={onChange} />);
+    render(<MarkdownEditor value="# Hello World" onChange={onChange} />);
 
-    const textarea = screen.getByRole("textbox");
-    fireEvent.change(textarea, { target: { value: "Hello" } });
-
-    expect(onChange).toHaveBeenCalledWith("Hello");
+    // In Lexical, headings are rendered as H1 nodes
+    expect(await screen.findByText("Hello World")).toBeInTheDocument();
   });
 
-  it("switches to preview tab and back", () => {
-    const onChange = vi.fn();
-    render(<MarkdownEditor value="Some content" onChange={onChange} />);
-
-    const previewTab = screen.getByText("Preview");
-    fireEvent.click(previewTab);
-
-    expect(screen.queryByRole("textbox")).not.toBeInTheDocument();
-    expect(screen.getByText("Preview placeholder")).toBeInTheDocument();
-
-    const writeTab = screen.getByText("Write");
-    fireEvent.click(writeTab);
-
-    expect(screen.getByRole("textbox")).toBeInTheDocument();
-    expect(screen.getByDisplayValue("Some content")).toBeInTheDocument();
-  });
-
-  it("shows cheatsheet items in write tab", () => {
+  it("shows toolbar buttons", () => {
     render(<MarkdownEditor value="" onChange={() => {}} />);
 
-    expect(screen.getByText("Bold:")).toBeInTheDocument();
-    expect(screen.getByText("**text**")).toBeInTheDocument();
-    expect(screen.getByText("List:")).toBeInTheDocument();
-    expect(screen.getByText("- item")).toBeInTheDocument();
-    expect(screen.getByText("Code:")).toBeInTheDocument();
-    expect(screen.getByText("`code`")).toBeInTheDocument();
+    expect(screen.getByTitle("Undo")).toBeInTheDocument();
+    expect(screen.getByTitle("Redo")).toBeInTheDocument();
+    expect(screen.getByTitle("Heading 1")).toBeInTheDocument();
+    expect(screen.getByTitle("Heading 2")).toBeInTheDocument();
+    expect(screen.getByTitle("Bullet List")).toBeInTheDocument();
+    expect(screen.getByTitle("Numbered List")).toBeInTheDocument();
+    expect(screen.getByTitle("Quote")).toBeInTheDocument();
   });
 });
