@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { cn } from "../../lib/utils";
-import { type Tab } from "./MarkdownEditor.types";
 import { CHEATSHEET_ITEMS } from "./MarkdownEditor.helpers";
 import { Button } from "../Button/Button";
 import { FormattedMessage } from "react-intl";
@@ -18,7 +17,7 @@ const MarkdownEditor = ({
   placeholder,
   className,
 }: MarkdownEditorProps) => {
-  const [activeTab, setActiveTab] = useState<Tab>("write");
+  const [activeTab, setActiveTab] = useState<"write" | "preview">("write");
 
   return (
     <div className={cn("flex flex-col gap-2 w-full", className)}>
