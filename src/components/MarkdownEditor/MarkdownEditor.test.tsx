@@ -15,8 +15,8 @@ describe("MarkdownEditor", () => {
     );
 
     expect(screen.getByText("Enter markdown...")).toBeInTheDocument();
-    expect(screen.getByTitle("Bold")).toBeInTheDocument();
-    expect(screen.getByTitle("Italic")).toBeInTheDocument();
+    expect(screen.getByLabelText("Bold")).toBeInTheDocument();
+    expect(screen.getByLabelText("Italic")).toBeInTheDocument();
   });
 
   it("renders provided markdown content", async () => {
@@ -30,15 +30,15 @@ describe("MarkdownEditor", () => {
   it("shows toolbar buttons", () => {
     render(<MarkdownEditor value="" onChange={() => {}} />);
 
-    expect(screen.getByTitle("Undo")).toBeInTheDocument();
-    expect(screen.getByTitle("Redo")).toBeInTheDocument();
-    expect(screen.getByTitle("Heading 1")).toBeInTheDocument();
-    expect(screen.getByTitle("Heading 2")).toBeInTheDocument();
-    expect(screen.getByTitle("Bullet List")).toBeInTheDocument();
-    expect(screen.getByTitle("Numbered List")).toBeInTheDocument();
-    expect(screen.getByTitle("Quote")).toBeInTheDocument();
-    expect(screen.getByTitle("Inline Code")).toBeInTheDocument();
-    expect(screen.getByTitle("Code Block")).toBeInTheDocument();
+    expect(screen.getByLabelText("Undo")).toBeInTheDocument();
+    expect(screen.getByLabelText("Redo")).toBeInTheDocument();
+    expect(screen.getByLabelText("Heading 1")).toBeInTheDocument();
+    expect(screen.getByLabelText("Heading 2")).toBeInTheDocument();
+    expect(screen.getByLabelText("Bullet List")).toBeInTheDocument();
+    expect(screen.getByLabelText("Numbered List")).toBeInTheDocument();
+    expect(screen.getByLabelText("Quote")).toBeInTheDocument();
+    expect(screen.getByLabelText("Inline Code")).toBeInTheDocument();
+    expect(screen.getByLabelText("Code Block")).toBeInTheDocument();
   });
   it("renders code blocks correctly", async () => {
     const onChange = vi.fn();

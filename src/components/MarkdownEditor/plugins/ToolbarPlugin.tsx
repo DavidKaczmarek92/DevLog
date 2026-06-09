@@ -1,5 +1,7 @@
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { useCallback, useEffect, useState } from "react";
+import { useIntl } from "react-intl";
+import messages from "./messages";
 import {
   CAN_REDO_COMMAND,
   CAN_UNDO_COMMAND,
@@ -35,6 +37,7 @@ import {
 
 const ToolbarPlugin = () => {
   const [editor] = useLexicalComposerContext();
+  const intl = useIntl();
   const [canUndo, setCanUndo] = useState(false);
   const [canRedo, setCanRedo] = useState(false);
   const [isBold, setIsBold] = useState(false);
@@ -91,7 +94,8 @@ const ToolbarPlugin = () => {
         size="sm"
         disabled={!canUndo}
         onClick={() => editor.dispatchCommand(UNDO_COMMAND, undefined)}
-        title="Undo"
+        title={intl.formatMessage(messages.undo)}
+        aria-label={intl.formatMessage(messages.undo)}
         type="button"
       >
         <Undo className="h-4 w-4" />
@@ -101,7 +105,8 @@ const ToolbarPlugin = () => {
         size="sm"
         disabled={!canRedo}
         onClick={() => editor.dispatchCommand(REDO_COMMAND, undefined)}
-        title="Redo"
+        title={intl.formatMessage(messages.redo)}
+        aria-label={intl.formatMessage(messages.redo)}
         type="button"
       >
         <Redo className="h-4 w-4" />
@@ -111,7 +116,8 @@ const ToolbarPlugin = () => {
         variant={isBold ? "secondary" : "ghost"}
         size="sm"
         onClick={() => editor.dispatchCommand(FORMAT_TEXT_COMMAND, "bold")}
-        title="Bold"
+        title={intl.formatMessage(messages.bold)}
+        aria-label={intl.formatMessage(messages.bold)}
         type="button"
       >
         <Bold className="h-4 w-4" />
@@ -120,7 +126,8 @@ const ToolbarPlugin = () => {
         variant={isItalic ? "secondary" : "ghost"}
         size="sm"
         onClick={() => editor.dispatchCommand(FORMAT_TEXT_COMMAND, "italic")}
-        title="Italic"
+        title={intl.formatMessage(messages.italic)}
+        aria-label={intl.formatMessage(messages.italic)}
         type="button"
       >
         <Italic className="h-4 w-4" />
@@ -129,7 +136,8 @@ const ToolbarPlugin = () => {
         variant={isCode ? "secondary" : "ghost"}
         size="sm"
         onClick={() => editor.dispatchCommand(FORMAT_TEXT_COMMAND, "code")}
-        title="Inline Code"
+        title={intl.formatMessage(messages.inlineCode)}
+        aria-label={intl.formatMessage(messages.inlineCode)}
         type="button"
       >
         <Code className="h-4 w-4" />
@@ -146,7 +154,8 @@ const ToolbarPlugin = () => {
             }
           });
         }}
-        title="Heading 1"
+        title={intl.formatMessage(messages.h1)}
+        aria-label={intl.formatMessage(messages.h1)}
         type="button"
       >
         <Heading1 className="h-4 w-4" />
@@ -162,7 +171,8 @@ const ToolbarPlugin = () => {
             }
           });
         }}
-        title="Heading 2"
+        title={intl.formatMessage(messages.h2)}
+        aria-label={intl.formatMessage(messages.h2)}
         type="button"
       >
         <Heading2 className="h-4 w-4" />
@@ -174,7 +184,8 @@ const ToolbarPlugin = () => {
         onClick={() =>
           editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined)
         }
-        title="Bullet List"
+        title={intl.formatMessage(messages.bulletList)}
+        aria-label={intl.formatMessage(messages.bulletList)}
         type="button"
       >
         <List className="h-4 w-4" />
@@ -185,7 +196,8 @@ const ToolbarPlugin = () => {
         onClick={() =>
           editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined)
         }
-        title="Numbered List"
+        title={intl.formatMessage(messages.numberedList)}
+        aria-label={intl.formatMessage(messages.numberedList)}
         type="button"
       >
         <ListOrdered className="h-4 w-4" />
@@ -201,7 +213,8 @@ const ToolbarPlugin = () => {
             }
           });
         }}
-        title="Quote"
+        title={intl.formatMessage(messages.quote)}
+        aria-label={intl.formatMessage(messages.quote)}
         type="button"
       >
         <Quote className="h-4 w-4" />
@@ -217,7 +230,8 @@ const ToolbarPlugin = () => {
             }
           });
         }}
-        title="Code Block"
+        title={intl.formatMessage(messages.codeBlock)}
+        aria-label={intl.formatMessage(messages.codeBlock)}
         type="button"
       >
         <SquareCode className="h-4 w-4" />

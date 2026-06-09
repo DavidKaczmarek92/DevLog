@@ -2,5 +2,16 @@
   "app.title": "DevLog",
   "app.description": "Click on the Tauri, Vite, and React logos to learn more.",
   "app.greet.placeholder": "Enter a name...",
-  "app.greet.button": "Greet"
+  "app.greet.button": "Greet",
+  "toolbar.undo": "Undo",
+  "toolbar.redo": "Redo",
+  "toolbar.bold": "Bold",
+  "toolbar.italic": "Italic",
+  "toolbar.inlineCode": "Inline Code",
+  "toolbar.h1": "Heading 1",
+  "toolbar.h2": "Heading 2",
+  "toolbar.bulletList": "Bullet List",
+  "toolbar.numberedList": "Numbered List",
+  "toolbar.quote": "Quote",
+  "toolbar.codeBlock": "Code Block"
 }
