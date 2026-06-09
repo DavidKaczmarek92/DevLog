@@ -37,5 +37,7 @@ describe("MarkdownEditor", () => {
     expect(screen.getByTitle("Bullet List")).toBeInTheDocument();
     expect(screen.getByTitle("Numbered List")).toBeInTheDocument();
     expect(screen.getByTitle("Quote")).toBeInTheDocument();
+    expect(screen.getByTitle("Inline Code")).toBeInTheDocument();
+    expect(screen.getByTitle("Code Block")).toBeInTheDocument();
   });
 });

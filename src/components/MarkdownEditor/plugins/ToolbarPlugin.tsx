@@ -12,6 +12,7 @@ import {
 } from "lexical";
 import { $setBlocksType } from "@lexical/selection";
 import { $createHeadingNode, $createQuoteNode } from "@lexical/rich-text";
+import { $createCodeNode } from "@lexical/code";
 import {
   INSERT_ORDERED_LIST_COMMAND,
   INSERT_UNORDERED_LIST_COMMAND,
@@ -28,6 +29,8 @@ import {
   Undo,
   Redo,
   Quote,
+  Code,
+  SquareCode,
 } from "lucide-react";
 
 const ToolbarPlugin = () => {
@@ -36,12 +39,14 @@ const ToolbarPlugin = () => {
   const [canRedo, setCanRedo] = useState(false);
   const [isBold, setIsBold] = useState(false);
   const [isItalic, setIsItalic] = useState(false);
+  const [isCode, setIsCode] = useState(false);
 
   const updateToolbar = useCallback(() => {
     const selection = $getSelection();
     if ($isRangeSelection(selection)) {
       setIsBold(selection.hasFormat("bold"));
       setIsItalic(selection.hasFormat("italic"));
+      setIsCode(selection.hasFormat("code"));
     }
   }, []);
 
@@ -120,6 +125,15 @@ const ToolbarPlugin = () => {
       >
         <Italic className="h-4 w-4" />
       </Button>
+      <Button
+        variant={isCode ? "secondary" : "ghost"}
+        size="sm"
+        onClick={() => editor.dispatchCommand(FORMAT_TEXT_COMMAND, "code")}
+        title="Inline Code"
+        type="button"
+      >
+        <Code className="h-4 w-4" />
+      </Button>
       <div className="w-px h-4 bg-border mx-1" />
       <Button
         variant="ghost"
@@ -191,6 +205,22 @@ const ToolbarPlugin = () => {
         type="button"
       >
         <Quote className="h-4 w-4" />
+      </Button>
+      <Button
+        variant="ghost"
+        size="sm"
+        onClick={() => {
+          editor.update(() => {
+            const selection = $getSelection();
+            if ($isRangeSelection(selection)) {
+              $setBlocksType(selection, () => $createCodeNode());
+            }
+          });
+        }}
+        title="Code Block"
+        type="button"
+      >
+        <SquareCode className="h-4 w-4" />
       </Button>
     </div>
   );
