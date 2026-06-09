@@ -11,6 +11,7 @@ import { CodeNode, CodeHighlightNode } from "@lexical/code";
 import { TRANSFORMERS } from "@lexical/markdown";
 import theme from "./theme";
 import { MarkdownPlugin } from "./plugins/MarkdownPlugin";
+import { ToolbarPlugin } from "./plugins/ToolbarPlugin";
 import { cn } from "../../lib/utils";
 
 interface EditorProps {
@@ -41,21 +42,24 @@ const Editor = ({ value, onChange, placeholder, className }: EditorProps) => {
     <LexicalComposer initialConfig={initialConfig}>
       <div
         className={cn(
-          "relative rounded-md border border-input bg-background shadow-sm focus-within:ring-1 focus-within:ring-ring",
+          "relative rounded-md border border-input bg-background shadow-sm focus-within:ring-1 focus-within:ring-ring overflow-hidden",
           className,
         )}
       >
-        <RichTextPlugin
-          contentEditable={
-            <ContentEditable className="min-h-[200px] w-full px-3 py-2 text-sm focus:outline-none" />
-          }
-          placeholder={
-            <div className="absolute top-[9px] left-3 pointer-events-none text-sm text-muted-foreground">
-              {placeholder}
-            </div>
-          }
-          ErrorBoundary={LexicalErrorBoundary}
-        />
+        <ToolbarPlugin />
+        <div className="relative">
+          <RichTextPlugin
+            contentEditable={
+              <ContentEditable className="min-h-[200px] w-full px-3 py-2 text-sm focus:outline-none" />
+            }
+            placeholder={
+              <div className="absolute top-[9px] left-3 pointer-events-none text-sm text-muted-foreground">
+                {placeholder}
+              </div>
+            }
+            ErrorBoundary={LexicalErrorBoundary}
+          />
+        </div>
         <HistoryPlugin />
         <ListPlugin />
         <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
