@@ -30,15 +30,21 @@ describe("MarkdownEditor", () => {
   it("shows toolbar buttons", () => {
     render(<MarkdownEditor value="" onChange={() => {}} />);
 
-    expect(screen.getByLabelText("Undo")).toBeInTheDocument();
-    expect(screen.getByLabelText("Redo")).toBeInTheDocument();
-    expect(screen.getByLabelText("Heading 1")).toBeInTheDocument();
-    expect(screen.getByLabelText("Heading 2")).toBeInTheDocument();
-    expect(screen.getByLabelText("Bullet List")).toBeInTheDocument();
-    expect(screen.getByLabelText("Numbered List")).toBeInTheDocument();
-    expect(screen.getByLabelText("Quote")).toBeInTheDocument();
-    expect(screen.getByLabelText("Inline Code")).toBeInTheDocument();
-    expect(screen.getByLabelText("Code Block")).toBeInTheDocument();
+    const toolbarButtons = [
+      "Undo",
+      "Redo",
+      "Heading 1",
+      "Heading 2",
+      "Bullet List",
+      "Numbered List",
+      "Quote",
+      "Inline Code",
+      "Code Block",
+    ];
+
+    toolbarButtons.forEach((label) => {
+      expect(screen.getByLabelText(label)).toBeInTheDocument();
+    });
   });
   it("renders code blocks correctly", async () => {
     const onChange = vi.fn();
