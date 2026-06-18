@@ -12,6 +12,8 @@ updates:
     directory: "/src-tauri"
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-type: "development"
     open-pull-requests-limit: 5
 
   - package-ecosystem: "github-actions"
