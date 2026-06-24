@@ -43,7 +43,7 @@
     "@commitlint/cli": "21.0.2",
     "@commitlint/config-conventional": "21.0.2",
     "@eslint/js": "10.0.1",
-    "@playwright/test": "1.60.0",
+    "@playwright/test": "1.61.1",
     "@storybook/addon-links": "10.4.2",
     "@storybook/addon-onboarding": "10.4.2",
     "@storybook/react": "10.4.2",
