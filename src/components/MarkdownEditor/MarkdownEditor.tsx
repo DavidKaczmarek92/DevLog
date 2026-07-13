@@ -23,31 +23,31 @@ interface MarkdownEditorProps {
   className?: string;
 }
 
+const INITIAL_CONFIG = {
+  namespace: "MarkdownEditor",
+  theme,
+  onError: (error: Error) => {
+    console.error(error);
+  },
+  nodes: [
+    HeadingNode,
+    ListNode,
+    ListItemNode,
+    QuoteNode,
+    CodeNode,
+    CodeHighlightNode,
+    LinkNode,
+  ],
+};
+
 const MarkdownEditor = ({
   value,
   onChange,
   placeholder,
   className,
 }: MarkdownEditorProps) => {
-  const initialConfig = {
-    namespace: "MarkdownEditor",
-    theme,
-    onError: (error: Error) => {
-      console.error(error);
-    },
-    nodes: [
-      HeadingNode,
-      ListNode,
-      ListItemNode,
-      QuoteNode,
-      CodeNode,
-      CodeHighlightNode,
-      LinkNode,
-    ],
-  };
-
   return (
-    <LexicalComposer initialConfig={initialConfig}>
+    <LexicalComposer initialConfig={INITIAL_CONFIG}>
       <div
         className={cn(
           "relative rounded-md border border-input bg-background shadow-sm focus-within:ring-1 focus-within:ring-ring overflow-hidden",
